@@ -33,7 +33,11 @@ export const suggestedAreas = [
   ["10", "Reliability", "Design for failure and learn from incidents."],
 ] as const;
 
-// The only status source of truth. Keep entries planned until real notes exist.
+// The only status source of truth. Add a day here only after real notes exist.
+const completedDayDetails: Record<number, string> = {
+  1: "Created kirsty on App Server 3 with a non-interactive shell.",
+};
+
 export const courseTitles = [
   "Linux User Setup with Non-Interactive Shell",
   "Temporary User Setup with Expiry",
@@ -149,12 +153,15 @@ function areaForDay(day: number) {
 
 export const days: DayMeta[] = Array.from({ length: 100 }, (_, index) => {
   const day = index + 1;
+  const description = completedDayDetails[day];
+
   return {
     day,
     title: courseTitles[index],
-    status: "planned",
+    status: description ? "completed" : "planned",
     area: areaForDay(day),
-    description: "Template ready for notes after this day is completed.",
+    description:
+      description ?? "Template ready for notes after this day is completed.",
   };
 });
 

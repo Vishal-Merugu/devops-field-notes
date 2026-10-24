@@ -475,6 +475,11 @@ code {
   padding: 18px;
   overflow: auto;
 }
+.markdown-body pre code {
+  background: transparent;
+  color: inherit;
+  padding: 0;
+}
 .markdown-body .status-line {
   display: flex;
   gap: 12px;
