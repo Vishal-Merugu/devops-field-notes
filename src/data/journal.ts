@@ -36,6 +36,7 @@ export const suggestedAreas = [
 // The only status source of truth. Add a day here only after real notes exist.
 const completedDayDetails: Record<number, string> = {
   1: "Created kirsty on App Server 3 with a non-interactive shell.",
+  2: "Created mariyam on App Server 3 and set the account expiry to 2026-12-07.",
 };
 
 export const courseTitles = [
