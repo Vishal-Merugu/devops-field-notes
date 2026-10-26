@@ -17,25 +17,55 @@ Disable direct SSH root login on all application servers in the Stratos Datacent
 
 The task was completed on `stapp01`, `stapp02`, and `stapp03` using the KodeKloud jump host.
 
-For each app server, the SSH configuration was updated to:
+### Step-by-step procedure
 
-```text
-PermitRootLogin no
-```
+Repeat these steps on each app server:
 
-The configuration was validated and the SSH service reloaded:
+1. Connect from the jump host with the server's regular user, for example:
 
-```bash
-sudo sshd -t
-sudo systemctl reload sshd
-sudo sshd -T | grep permitrootlogin
-```
+   ```bash
+   ssh tony@stapp01
+   ```
 
-The effective setting was verified as:
+2. Open the SSH daemon configuration:
+
+   ```bash
+   sudo vi /etc/ssh/sshd_config
+   ```
+
+3. In `vi`, search for the setting by pressing `/`, typing `PermitRootLogin`, and pressing Enter. Press `i` to edit the line and set it to:
+
+   ```text
+   PermitRootLogin no
+   ```
+
+   If the setting is missing, add the line. Press Escape, type `:wq`, and press Enter to save and exit. Use `:q!` instead if you need to exit without saving.
+
+4. Validate the configuration before reloading SSH:
+
+   ```bash
+   sudo sshd -t
+   ```
+
+5. Reload SSH without closing the current session:
+
+   ```bash
+   sudo systemctl reload sshd
+   ```
+
+6. Verify the effective setting:
+
+   ```bash
+   sudo sshd -T | grep permitrootlogin
+   ```
+
+The expected output is:
 
 ```text
 permitrootlogin no
 ```
+
+The same procedure was repeated for `stapp02` and `stapp03` using their regular users.
 
 ## What surprised me
 
