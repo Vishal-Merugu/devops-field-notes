@@ -37,6 +37,7 @@ export const suggestedAreas = [
 const completedDayDetails: Record<number, string> = {
   1: "Created kirsty on App Server 3 with a non-interactive shell.",
   2: "Created mariyam on App Server 3 and set the account expiry to 2026-12-07.",
+  3: "Disabled direct root SSH login on all three Stratos app servers and verified permitrootlogin is no.",
 };
 
 export const courseTitles = [
