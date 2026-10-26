@@ -89,6 +89,20 @@ nav a {
 nav a:hover {
   color: var(--dp-color-accent);
 }
+.playground-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+}
+.terminal-icon {
+  width: 16px;
+  height: 16px;
+  fill: none;
+  stroke: currentColor;
+  stroke-linecap: square;
+  stroke-linejoin: miter;
+  stroke-width: 1.25;
+}
 .hero {
   padding-top: clamp(64px, 9vw, 140px);
   padding-bottom: clamp(70px, 9vw, 130px);

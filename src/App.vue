@@ -15,6 +15,22 @@ import { RouterLink, RouterView } from "vue-router";
         target="_blank"
         rel="noreferrer"
         >Source ↗</a
+      ><a
+        class="playground-link"
+        href="https://webvm.io/"
+        target="_blank"
+        rel="noreferrer"
+        aria-label="Open Linux playground in a new tab"
+        ><svg
+          aria-hidden="true"
+          viewBox="0 0 16 16"
+          focusable="false"
+          class="terminal-icon"
+        >
+          <path d="M2 3.5h12v9H2z" />
+          <path d="m4.5 6 2 2-2 2M8.5 10h3" />
+        </svg>
+        <span>Playground ↗</span></a
       >
     </nav>
   </header>
